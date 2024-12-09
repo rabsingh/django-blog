@@ -15,6 +15,17 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
+    class Post(models.Model):
+        # …
+
+        class Meta:
+            ordering = ["created_on"]
+
+    class Post(models.Model):
+    # …
+        def __str__(self):
+            return f"The title of this post is {self.title}"
+
 
 class Comment(models.Model):
     class Comment(models.Model):
